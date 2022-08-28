@@ -7,7 +7,8 @@ CREATE TABLE usuario(
     email VARCHAR(150),
     senha VARCHAR(50),
     telefone VARCHAR(11),
-    data_nasc DATE
+    data_nasc DATE,
+    adm BIT
 );
 
 CREATE TABLE materia(

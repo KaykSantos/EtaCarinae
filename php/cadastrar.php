@@ -19,7 +19,7 @@ if($row['total'] == 1){
     header('Location: ../cadastro.php');
     exit;
 }
-$sql = "INSERT INTO usuario (nome, email, senha, telefone) VALUES ('$name', '$email', '$senha', '$tell')";
+$sql = "INSERT INTO usuario (nome, email, senha, telefone, adm) VALUES ('$name', '$email', '$senha', '$tell', '1')";
 if($conexao->query($sql) === TRUE){
     $_SESSION['status_cadastro'] = true;
 }
