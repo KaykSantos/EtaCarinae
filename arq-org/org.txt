@@ -1,0 +1,20 @@
+|-> Cadastro 
+
+|-> Login
+
+|-> Home |-> Lista de tarefas
+    |-> Navbar 
+        |-> Lista de tarefas
+        |-> Tabela de horários
+        |-> Conta
+    
+|-> Lista de tarefas -> (Mostra as tarefas)
+    |-> Titulo, descrição, matéria, data, status
+
+|-> Tabela de horários -> (Horário das aulas com matéria))
+    |-> Dia x Aula 
+    (Ao clicar em cada célula, vai abrir um modal para cadastrar matéria da aula)
+
+|-> Conta -> (Ver informações da conta)   
+    |-> Informações da conta 
+        
