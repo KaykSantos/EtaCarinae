@@ -16,7 +16,7 @@ $res = mysqli_query($conexao, $query);
 $row = mysqli_num_rows($res);
 if($row == 1){
     $_SESSION['email'] = $email;
-    header('Location: ../painel.php');
+    header('Location: ../pages/home.php');
 }else{
     $_SESSION['nao_autenticado'] = true;
     header('Location: ../index.php');

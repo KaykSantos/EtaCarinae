@@ -229,3 +229,64 @@ button#cadastrar:hover{
     text-align: center;
     font-size: 17px;
 }
+/*----- Home user -----*/
+body#body-home{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #2E6EA6;
+}
+nav#nav-home p{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-left: 20px;
+    font-weight: 600;
+    color: rgb(228, 228, 228);
+}
+nav#nav-home{
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    background-color: #0D0D0D;
+    align-items: center;
+    justify-content: space-between;
+}
+nav#nav-home ul{
+    text-align: center;
+    display: flex;
+    flex-direction:row;
+    color: white;
+    list-style: none;
+    margin-right: 20px;
+}
+nav#nav-home ul li{
+    height: 40px;
+    width: 100px;
+    color: #ffff;
+    font-size: 20px;
+    border: 1px solid white;
+}
+nav#nav-home ul li a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+    text-decoration: none;
+    color: #ffff;
+}
+nav#nav-home ul li:hover{
+    background-color: #3f3e3e;
+    cursor: pointer;
+}
+main#main-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
