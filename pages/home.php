@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('../php/function.php');
+ProtegePagina();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
