@@ -1,0 +1,35 @@
+@media (max-width: 700px) {
+		nav#nav-home{
+	    height: 70px;
+	    background-color: #0D0D0D;
+		justify-content: center;
+	    flex-wrap: wrap; 
+	}
+	nav#nav-home ul{
+	    margin-right: 0px;
+	}
+	nav#nav-home p{
+	    margin-left: 0px;
+	}
+}
+@media (max-width: 515px) {
+	/*----- Home user -----*/
+	body#body-home{
+		height: auto;
+	}
+	nav#nav-home p{
+	    margin-left: 0px;
+	}
+	nav#nav-home{
+	    height: 100px;
+	    background-color: #0D0D0D;
+		justify-content: center;
+	    flex-wrap: wrap; 
+	}
+	nav#nav-home ul{
+	    margin-right: 0px;
+	}
+	nav#nav-home ul li{
+	    border: 1px solid #0D0D0D;
+	}
+}
