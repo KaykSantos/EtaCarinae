@@ -1,0 +1,44 @@
+<!-- <?php 
+session_start();
+?>
+--->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/mobileStyle.css">
+</head>
+<body id="body-login">
+    <main id="main-login">
+        <section id="section-login" style="flex-direction: column;">
+            <div id="login">
+                <p>Eta Carinae</p>
+                <form action="php/login.php" method="POST" id="form-login" autocomplete="off">
+                    <label for="email">Digite seu email:</label>
+                    <input type="email" name="email" id="email" placeholder="Login">
+                    <label for="senha">Digite sua senha:</label>
+                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    <button type="submit" name="entrar" id="entrar">Entrar</button>
+                    <p class="centralText">Não possui uma conta?</p>
+                    <p class="centralText"><a href="cadastro.php">Cadastre-se!</a></p>
+                </form>
+            </div>
+            <!--<?php
+                if(isset($_SESSION['nao_autenticado'])):
+            ?>--->
+
+                <div id="erroLogin">
+                    <p>Email e/ou senha inválidos!</p>
+                </div>
+            <!--<?php
+                endif;
+                unset($_SESSION['nao_autenticado'])
+            ?>--->
+        </section>
+    </main>
+</body>
+</html>
