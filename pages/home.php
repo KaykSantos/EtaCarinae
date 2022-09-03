@@ -11,6 +11,7 @@ ProtegePagina();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/mobileStyle.css">
 </head>
 <body id="body-home">
     <nav id="nav-home">
@@ -22,6 +23,8 @@ ProtegePagina();
         </ul>
     </nav>
     <main id="main-home">
+        <?php
+        ?>
     </main>
 </body>
 </html>

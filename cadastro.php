@@ -1,5 +1,14 @@
 <?php 
 session_start();
+include('php/function.php');
+if($_POST){
+    if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['senha']) || empty($_POST['tell'])){
+        header('Location: cadastro.php');
+        exit();
+    }else{
+        CadastrarUsuario($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['tell']);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,7 +24,7 @@ session_start();
         <section id="section-cad" style="flex-direction: column;">
             <div id="cadastro">
                 <p>Eta Carinae</p>
-                <form action="php/cadastrar.php" method="POST" id="form-cad" autocomplete="off">
+                <form action="" method="POST" id="form-cad" autocomplete="off">
                     <label for="name">Digite seu nome:</label>
                     <input type="text" id="name" name="name" placeholder="Nome">
                     <label for="email">Digite seu email:</label>

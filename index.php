@@ -1,5 +1,34 @@
 <?php 
 session_start();
+include('php/function.php');
+if($_POST){
+    if(empty($_POST['email']) || empty($_POST['senha'])){
+    header('Location: index.php');
+    exit();
+    }else{
+        $resultado = Login($_POST['email'], $_POST['senha']);
+        $user = $resultado['dados'];
+        if($resultado['erro'] == true){
+            $_SESSION['nao_autenticado'] = true;
+            header('Location: index.php');
+            exit();
+        }else{
+            $_SESSION['cd'] = $user->cd;
+            $_SESSION['nome'] = $user->nome;
+            $_SESSION['email'] = $user->email;
+            $_SESSION['senha'] = $user->senha;
+            $_SESSION['telefone'] = $user->telefone;
+            $_SESSION['adm'] = $user->adm;
+
+            if($user->adm == 0){
+                header('Location: pages/home.php');
+            }else{
+                header('Location: pages/homeUser.php');
+            }
+        }
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,13 +38,14 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/mobileStyle.css">
 </head>
 <body id="body-login">
     <main id="main-login">
         <section id="section-login" style="flex-direction: column;">
             <div id="login">
                 <p>Eta Carinae</p>
-                <form action="php/login.php" method="POST" id="form-login" autocomplete="off">
+                <form method="POST" id="form-login" autocomplete="off">
                     <label for="email">Digite seu email:</label>
                     <input type="email" name="email" id="email" placeholder="Login">
                     <label for="senha">Digite sua senha:</label>
