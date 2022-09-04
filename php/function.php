@@ -50,6 +50,7 @@ $conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível 
         if($GLOBALS['conexao']->query($query) === TRUE){
             $_SESSION['status_cadastro'] = true;
         }
+        header('Location: cadastro.php');
         $GLOBALS['conexao']->close();
         exit;
     }
