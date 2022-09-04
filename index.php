@@ -52,7 +52,7 @@ if($_POST){
                     <button type="submit" name="entrar" id="entrar">Entrar</button>
                     <p class="centralText">Não possui uma conta?</p>
                     <p class="centralText"><a href="cadastro.php">Cadastre-se!</a></p>
-                    <p class="centralText"><a href="veriEmail.php">Esqueci minha senha</a></p>
+                    <p class="centralText"><a href="trocarSenha/veriEmail.php">Esqueci minha senha</a></p>
                 </form>
             </div>
             <?php

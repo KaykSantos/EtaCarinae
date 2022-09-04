@@ -6,12 +6,12 @@ define('DB', 'db_etacarinae');
 
 $conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível conectar ao banco'); 
 
-    function ProtegePagina(){
+    /*function ProtegePagina(){
         if(!$_SESSION['email']){
             header('Location: ../index.php');
             exit();
         }
-    }
+    }*/
     function Login($email, $senha){
         $email = mysqli_real_escape_string($GLOBALS['conexao'], $email);
         $senha = mysqli_real_escape_string($GLOBALS['conexao'], $senha);
@@ -33,8 +33,8 @@ $conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível 
     function CadastrarUsuario($nameU, $emailU, $senhaU, $tellU){
         $name = mysqli_real_escape_string($GLOBALS['conexao'], $nameU);
         $email = mysqli_real_escape_string($GLOBALS['conexao'], $emailU);
-        $senha = mysqli_real_escape_string($GLOBALS['conexao'], $senhaU);
-        $tell = mysqli_real_escape_string($GLOBALS['conexao'], trim(md5($tellU)));
+        $senha = mysqli_real_escape_string($GLOBALS['conexao'], trim(md5($senhaU)));
+        $tell = mysqli_real_escape_string($GLOBALS['conexao'], $tellU);
         
         $query = "SELECT COUNT(*) AS total FROM usuario WHERE email = '{$email}'";
         $res = mysqli_query($GLOBALS['conexao'], $query);
@@ -116,11 +116,11 @@ $conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível 
     }
     function VerificarCodigo($codigo){
         if($codigo == $_SESSION['codigo']){
-            $_SESSION['codigoFalse'] = false;
+            unset($_SESSION['codigoFalse']);
             header('Location: novaSenha.php');
             exit();
         } else{
-            unset($_SESSION['codigoFalse']);
+            $_SESSION['codigoFalse'] = true;
             header('Location: veriCodigo.php');
             exit();
         }
@@ -134,11 +134,11 @@ $conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível 
             $query = 'UPDATE usuario SET senha ="'.$nova_senha.'" WHERE cd = "'.$_SESSION['cd'].'"';
             $res = $GLOBALS['conn']->query($query);
             $_SESSION['trocaSenhaEfetuada'] = true;
-            header('Location: index.php');
+            header('Location: ../index.php');
             exit();
         }else{
             $_SESSION['trocaNaoEfetuada'];
-            header('Location: index.php');
+            header('Location: ../index.php');
             exit();
         }
 
