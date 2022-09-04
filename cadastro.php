@@ -6,7 +6,7 @@ if($_POST){
         header('Location: cadastro.php');
         exit();
     }else{
-        CadastrarUsuario($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['tell']);
+        CadastrarUsuario($_POST['name'], $_POST['email'], $_POST['senha'], $_POST['tell']);
     }
 }
 ?>

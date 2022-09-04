@@ -28,7 +28,6 @@ if($_POST){
         }
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -53,6 +52,7 @@ if($_POST){
                     <button type="submit" name="entrar" id="entrar">Entrar</button>
                     <p class="centralText">Não possui uma conta?</p>
                     <p class="centralText"><a href="cadastro.php">Cadastre-se!</a></p>
+                    <p class="centralText"><a href="veriEmail.php">Esqueci minha senha</a></p>
                 </form>
             </div>
             <?php
@@ -64,6 +64,28 @@ if($_POST){
             <?php
                 endif;
                 unset($_SESSION['nao_autenticado'])
+            ?>
+
+            <?php
+                if(isset($_SESSION['trocaSenhaEfetuada'])):
+            ?>   
+                <div id="trocaEfetuada">
+                    <p>A troca da senha foi efetuada. Faça login para continuar.</p>
+                </div>
+            <?php
+                endif;
+                unset($_SESSION['trocaSenhaEfetuada'])
+            ?>
+
+            <?php
+                if(isset($_SESSION['trocaNaoEfetuada'])):
+            ?>   
+                <div id="trocaFalhou">
+                    <p>A troca da senha falhou. Tente novamente.</p>
+                </div>
+            <?php
+                endif;
+                unset($_SESSION['trocaNaoEfetuada'])
             ?>
         </section>
     </main>
