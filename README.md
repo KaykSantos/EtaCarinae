@@ -1,2 +1,2 @@
 # EtaCarinae
-Projeto de organização das tarefas escolares
+Projeto de organização de tarefas escolares
